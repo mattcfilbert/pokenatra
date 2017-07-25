@@ -1,0 +1,10 @@
+<h2><%= @pokemon.name %></h2>
+<h3>Type: <%= @pokemon.poke_type.capitalize %></h3>
+<h4>CP: <%= @pokemon.cp %></h4>
+<h4>Trainer ID: <%= @pokemon.trainer_id %></h4>
+<img src="<%= @pokemon.img_url %>" alt="<%= @pokemon.name %>">
+
+<br>
+<a href = '/pokemons'> INDEX </a>
+<br>
+<a href = '/pokemons/<%= @pokemon.id %>/edit'> MODIFY/RELEASE <%= @pokemon.name %></a>
