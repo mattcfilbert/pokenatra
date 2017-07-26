@@ -1,8 +1,8 @@
-<h2>List of Pokemon!</h2>
-<% @pokemons.each do |pokemon| %>
-<p>#<%= pokemon.id %>: <%= pokemon.name %>, a <%= pokemon.poke_type %> type Pokemon. Learn more on <a href = "/pokemons/<%= pokemon.id %>"><%= pokemon.name %>'s page</a>!</p>
+<h2>List of Trainers!</h2>
+<% @trainers.each do |trainer| %>
+<p>#<%= trainer.id %>: <%= trainer.name %>, a trainer at level <%= trainer.level %>. Learn more on <a href = "/trainers/<%= trainer.id %>"><%= trainer.name %>'s page</a>!</p>
 
 
 <% end %>
 
-<a href = 'pokemons/new'> NEW POKEMON </a>
+<a href = 'trainers/new'> NEW TRAINER </a>

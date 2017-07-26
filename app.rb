@@ -9,6 +9,51 @@ require_relative 'db/connection'
 require_relative 'models/pokemon'
 require_relative 'models/trainer'
 
+get '/' do
+  erb :home
+end
+
+# TRAINERS
+
+get '/trainers' do
+  @trainers = Trainer.all
+  erb :"trainers/index"
+end
+
+get '/trainers/new' do
+  erb :"trainers/new"
+end
+
+post '/trainers' do
+  @trainer = Trainer.create(params[:trainer]
+  )
+  redirect "/trainers/#{@trainer.id}"
+end
+
+get '/trainers/:id' do
+  @trainer = Trainer.find(params[:id])
+  erb :"trainers/show"
+end
+
+get '/trainers/:id/edit' do
+  @trainer = Trainer.find(params[:id])
+  erb :"trainers/edit"
+end
+
+put '/trainers/:id' do
+  @trainer = Trainer.find(params[:id])
+  @trainer.update(params[:trainer])
+  redirect "/trainers/#{@trainer.id}"
+end
+
+delete '/trainers/:id' do
+  @trainer = Trainer.find(params[:id])
+  @trainer.delete
+  redirect "/trainers"
+end
+
+# POKEMONS
+
 get '/pokemons' do
   @pokemons = Pokemon.all
   erb :"pokemons/index"

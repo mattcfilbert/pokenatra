@@ -1,10 +1,17 @@
-/*
+
 
 Uncomment for sick pokestyle
 
 @font-face {
   font-family: "Pokemon";
   src: url(../fonts/PokemonSolid.ttf) format("truetype");
+}
+
+.profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 a, p, h2, h3 {
@@ -70,4 +77,4 @@ a:hover {
     text-shadow: 4px 4px 3px rgba(255, 0, 0, .3);
     background-color: rgba(0, 0, 0, .1);
   }
-}*/
+}

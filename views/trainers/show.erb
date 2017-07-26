@@ -1,10 +1,16 @@
-<h2><%= @pokemon.name %></h2>
-<h3>Type: <%= @pokemon.poke_type.capitalize %></h3>
-<h4>CP: <%= @pokemon.cp %></h4>
-<h4>Trainer ID: <%= @pokemon.trainer_id %></h4>
-<img src="<%= @pokemon.img_url %>" alt="<%= @pokemon.name %>">
 
+<div class="profile">
+
+<h2><%= @trainer.name %></h2>
+<h3>Level: <%= @trainer.level %></h3>
+<img src="<%= @trainer.img_url %>" alt="<%= @trainer.name %>">
+<% @trainer.pokemons.each do |pokemon| %>
+<p>#<%= pokemon.id %>: <%= pokemon.name %>, a <%= pokemon.poke_type %> type pokemon. Learn more on <a href = "/pokemons/<%= pokemon.id %>"><%= pokemon.name %>'s page</a>!</p>
+
+
+<% end %>
 <br>
-<a href = '/pokemons'> INDEX </a>
+<a href = '/trainers'> INDEX </a>
 <br>
-<a href = '/pokemons/<%= @pokemon.id %>/edit'> MODIFY/RELEASE <%= @pokemon.name %></a>
+<a href = '/trainers/<%= @trainer.id %>/edit'> MODIFY/FIRE <%= @trainer.name %></a>
+</div>
