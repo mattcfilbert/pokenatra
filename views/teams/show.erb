@@ -1,0 +1,15 @@
+
+<div class="profile">
+
+<h2><%= @team.name %></h2>
+<h3>Trainers:</h3>
+<% @team.trainers.each do |trainer| %>
+<p>#<%= trainer.id %>: <%= trainer.name %>, a level <%= trainer.level %> trainer. Learn more on <a href = "/trainers/<%= trainer.id %>"><%= trainer.name %>'s page</a>!</p>
+
+
+<% end %>
+<br>
+<a href = '/teams'> INDEX </a>
+<br>
+<a href = '/teams/<%= @team.id %>/edit'> MODIFY/DISBAND <%= @team.name %></a>
+</div>

@@ -1,0 +1,8 @@
+<h2>List of Teams!</h2>
+<% @teams.each do |team| %>
+<p>#<%= team.id %>: <%= team.name %> - Learn more on <a href = "/teams/<%= team.id %>"><%= team.name %>'s page</a>!</p>
+
+
+<% end %>
+
+<a href = 'teams/new'> NEW team </a>

@@ -3,6 +3,7 @@
 
 <h2><%= @trainer.name %></h2>
 <h3>Level: <%= @trainer.level %></h3>
+<h3>Team ID: <%= @trainer.team_id %></h3>
 <img src="<%= @trainer.img_url %>" alt="<%= @trainer.name %>">
 <% @trainer.pokemons.each do |pokemon| %>
 <p>#<%= pokemon.id %>: <%= pokemon.name %>, a <%= pokemon.poke_type %> type pokemon. Learn more on <a href = "/pokemons/<%= pokemon.id %>"><%= pokemon.name %>'s page</a>!</p>

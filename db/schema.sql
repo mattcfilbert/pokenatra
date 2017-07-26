@@ -1,13 +1,20 @@
 
 DROP TABLE IF EXISTS pokemons;
 DROP TABLE IF EXISTS trainers;
+DROP TABLE IF EXISTS teams;
+
+CREATE TABLE teams (
+  id SERIAL PRIMARY KEY,
+  name VARCHAR(255)
+);
 
 
 CREATE TABLE trainers (
   id SERIAL PRIMARY KEY,
   name VARCHAR(255),
   level INTEGER,
-  img_url VARCHAR(255)
+  img_url VARCHAR(255),
+  team_id INTEGER REFERENCES teams(id)
 );
 
 CREATE TABLE pokemons (
